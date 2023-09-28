@@ -7,13 +7,11 @@ import { useState } from "react";
 import Dropdown1 from "../components/Dropdown1";
 import toast from "react-hot-toast";
 
-export const EditTask = (baseURL) => {
+export const EditTask = ({ baseURL }) => {
   const { id } = useParams();
   console.log(id);
 
-  const { data, loading, error } = useFetch(
-    `${baseURL}/api/task/${id}`
-  );
+  const { data, loading, error } = useFetch(`${baseURL}/api/task/${id}`);
 
   console.log(data);
 
@@ -58,7 +56,7 @@ export const EditTask = (baseURL) => {
       return;
     }
 
-    toast.error("Something went wrong")
+    toast.error("Something went wrong");
   };
 
   return (
@@ -102,7 +100,7 @@ export const EditTask = (baseURL) => {
         </div>
         {/* <Dropdown /> */}
         <Dropdown1 setTag={setTag} />
-        <button  className="bgrc w-100 mt-5 mb-3 border-0 rounded-2 p-2">
+        <button className="bgrc w-100 mt-5 mb-3 border-0 rounded-2 p-2">
           Done
         </button>
       </form>

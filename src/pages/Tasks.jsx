@@ -5,7 +5,7 @@ import deleteIcon from "../assets/images/deleteIcon.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import toast from "react-hot-toast";
-const Tasks = (baseURL) => {
+const Tasks = ({ baseURL }) => {
   const { data, loading, error } = useFetch(`${baseURL}/api/task`);
   const navigate = useNavigate();
   const handleDelete = async (id) => {

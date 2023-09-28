@@ -6,6 +6,7 @@ export const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log(url);
     const getData = async () => {
       const res = await fetch(url);
       const data = await res.json();
@@ -18,6 +19,7 @@ export const useFetch = (url) => {
       try {
         await getData();
       } catch (error) {
+        console.log(error);
         setError("Opps something eent wrong");
         setLoading(false);
       }

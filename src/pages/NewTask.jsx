@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Dropdown1 from "../components/Dropdown1";
 import toast from "react-hot-toast";
 
-const NewTask = (baseURL) => {
+const NewTask = ({ baseURL }) => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
